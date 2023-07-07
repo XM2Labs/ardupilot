@@ -54,11 +54,11 @@ def build_board(board):
     if args.debug:
         print("Building with debug symbols")
         configure_args.append("--debug")
-    if not run_program(["./waf", "configure"] + configure_args):
+    if not run_program(["waf", "configure"] + configure_args):
         return False
-    if not run_program(["./waf", "clean"]):
+    if not run_program(["waf", "clean"]):
         return False
-    if not run_program(["./waf", "bootloader"]):
+    if not run_program(["waf", "bootloader"]):
         return False
     return True
 
